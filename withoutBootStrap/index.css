@@ -12,6 +12,8 @@
     height: 67px;
     background-image: url("../images/header_bg.png");
     background-repeat: repeat-x 0 0;
+    position: fixed;
+    top: 0px;
 }
 
 /*header 태그 안의 자식태그*/
@@ -37,13 +39,25 @@
 }
 
 .subMenu {
-    flex-basis: 20%;
+    flex-basis: 10%;
 }
 
 
 .mainMenu > ul {
-    display: flex;
+    display: flex;  /*가로 정렬*/
     justify-content: space-between;
+    text-align: center;
+    width: 582px;
+    height: 63px;
+    line-height: 58px;
+    position: relative;
+}
+
+.mainMenu a, .subMenu a {
+    font: 13px/1.5 "Nanum Gothic", "나눔고딕", "돋움", Dotum, "굴림", Gulim, sans-serif;
+    font-weight: bold;
+    color: blueviolet;
+    text-transform: uppercase;
 }
 
 .subMenu > ul {
@@ -81,7 +95,26 @@
     margin: 70px 50px; */
 
     /* 사방이 동일한 값 */
-    margin: 50px auto;
+    margin: 135px auto 50px auto;
+    /*부모-자식 둘다 margin-top 값을 주면 버그 생김*/
+    /*자식 top 값 안먹음*/
+    /*해결 방법 : 부모에 overflow:hidden 주기*/
+    overflow: hidden;
+}
+
+#sample {
+    width: 700px;
+    height: 600px;
+    background-color: aquamarine;
+    overflow: visible;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+#sample > img {
+    /* width: 800px;
+    height:  650px; */
+    object-fit: ;
 }
 
 
@@ -94,4 +127,8 @@
 
     /* box의 크기가 padding만큼 늘어나지 않음 */
     box-sizing: border-box;
+}
+
+#abs {
+    z-index: 50px;
 }
